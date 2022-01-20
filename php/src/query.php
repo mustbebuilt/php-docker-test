@@ -4,7 +4,7 @@ $user = 'MYSQL_USER';
 //database user password
 $pass = 'MYSQL_PASSWORD';
 // database name
-$mydatabase = 'MY_DATABASE';
+$mydatabase = 'MYSQL_DATABASE';
 // check the mysql connection status
 $conn = new mysqli($host, $user, $pass, $mydatabase);
 
