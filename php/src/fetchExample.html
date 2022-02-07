@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetch Example</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fetch Example</h1>
+      <p>
+        The Fetch API is a Modern wrapper for the classic XMLHttpRequest method.
+      </p>
+      <p>
+        As a newer feature check browser support at
+        <a href="https://caniuse.com/#search=fetch">caniuse</a>.
+      </p>
+      <p>
+        More details on
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+          >MDN</a
+        >.
+      </p>
+      <div id="dom"></div>
+    </div>
+  </body>
+  <script>
+    (function() {
+      // IIFE
+      let api = "api.php";
+      fetch(api)
+        .then(response => response.json())
+        .then(myJson => {
+          console.dir(myJson);
+          document.getElementById("dom").innerHTML = myJson
+            .map(obj => obj.filmName)
+            .join(" <br> ");
+        })
+        .catch(() => console.log("damn that Jason"));
+    })();
+  </script>
+</html>
